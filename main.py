@@ -27,9 +27,6 @@ usLILA = filein['LILATracts_1And10'].value_counts()[1] #US Low Income and Low Ac
 usFL = filein['State'].value_counts()['Florida']  #Number of instances in FL
 usFLLA = filein['State'].value_counts()['Florida'] & filein['LILATracts_1And10'].value_counts()[1] #Number of instances in FL that are low income/low access
 
-usDUVAL = filein['County'].value_counts()['Duval County'] #Number of isntances of Duval County in the data
-usDUVALFD = filein['County'].value_counts()['Duval County'] #
-
 #Number of food deserts out of all data values
 print('Number of low access food deserts in the United States (1mi Urban/10mi Rural):', usLA, 'out of', usTC)
 print('That is roughly', '{:.0%}'.format(usLA/usTC), 'of the United States that is low access to supermarkets.\n')
@@ -37,4 +34,3 @@ print('Number of low access/low income areas in the United States (1mi Urban/10m
 print('That is roughly', '{:.0%}'.format(usLILA/usTC), 'of the United States that is low access/low income to supermarkets.\n')
 print('Number of low access/low income areas in Florida affected by food deserts:', usFLLA, '/', usFL)
 print('That is roughly', '{:.0%}'.format(usFLLA/usFL), 'of Florida that is low access to supermarkets.\n')
-print('Total Duval County areas:', usDUVAL, ' out of', usFL, 'Florida areas.')
