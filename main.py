@@ -25,12 +25,23 @@ usTC = 72531 #US Total Count
 usLA = filein['LA1and10'].value_counts()[1] #US Low Access
 usLILA = filein['LILATracts_1And10'].value_counts()[1] #US Low Income and Low Access
 usFL = filein['State'].value_counts()['Florida']  #Number of instances in FL
-usFLLA = filein['State'].value_counts()['Florida'] & filein['LILATracts_1And10'].value_counts()[1] #Number of instances in FL that are low income/low access
+usGA = filein['State'].value_counts()['Georgia']  #Number of instances in FL
+usAL = filein['State'].value_counts()['Alabama']  #Number of instances in FL
+usFLLA = filein['State'].value_counts()['Florida'] & filein['LA1and10'].value_counts()[1] #Number of instances in FL that are low access
+usFLLALI = filein['State'].value_counts()['Florida'] & filein['LILATracts_1And10'].value_counts()[1] #Number of instances in FL that are low income/low access
+usGALALI = filein['State'].value_counts()['Georgia'] & filein['LILATracts_1And10'].value_counts()[1] #Number of instances in GA that are low income/low access
+usALLALI = filein['State'].value_counts()['Alabama'] & filein['LILATracts_1And10'].value_counts()[1] #Number of instances in AL that are low income/low access
 
 #Number of food deserts out of all data values
-print('Number of low access food deserts in the United States (1mi Urban/10mi Rural):', usLA, 'out of', usTC)
-print('That is roughly', '{:.0%}'.format(usLA/usTC), 'of the United States that is low access to supermarkets.\n')
+#print('Number of low access food deserts in the United States (1mi Urban/10mi Rural):', usLA, 'out of', usTC)
+#print('That is roughly', '{:.0%}'.format(usLA/usTC), 'of the United States that is low access to supermarkets.\n')
 print('Number of low access/low income areas in the United States (1mi Urban/10mi Rural):', usLILA, 'out of', usTC)
 print('That is roughly', '{:.0%}'.format(usLILA/usTC), 'of the United States that is low access/low income to supermarkets.\n')
-print('Number of low access/low income areas in Florida affected by food deserts:', usFLLA, '/', usFL)
-print('That is roughly', '{:.0%}'.format(usFLLA/usFL), 'of Florida that is low access to supermarkets.\n')
+#print('Number of low access areas in Florida affected by food deserts:', usFLLA, '/', usFL)
+#print('That is roughly', '{:.0%}'.format(usFLLA/usFL), 'of Florida that is low access to supermarkets.\n')
+print('Number of low access/low income areas in Florida affected by food deserts:', usFLLALI, '/', usFL)
+print('That is roughly', '{:.0%}'.format(usFLLALI/usFL), 'of Florida that is low access to supermarkets.\n')
+print('Number of low access/low income areas in Georgia affected by food deserts:', usGALALI, '/', usGA)
+print('That is roughly', '{:.0%}'.format(usGALALI/usGA), 'of Georgia that is low access to supermarkets.\n')
+print('Number of low access/low income areas in Alabama affected by food deserts:', usALLALI, '/', usAL)
+print('That is roughly', '{:.0%}'.format(usALLALI/usAL), 'of Alabama that is low access to supermarkets.\n')
