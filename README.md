@@ -7,3 +7,5 @@
 
 Python extensions needed:
 1. pip install pandas
+2. pip install numpy
+3. pip install matplotlib
