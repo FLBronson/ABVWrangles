@@ -1,24 +1,29 @@
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import streamlit as st
 
 usFile = pd.read_csv('https://raw.githubusercontent.com/FLBronson/ABVWrangles/main/data.csv')
+flFile = pd.read_csv('https://raw.githubusercontent.com/FLBronson/ABVWrangles/main/florida.csv')
+gaFile = pd.read_csv('https://raw.githubusercontent.com/FLBronson/ABVWrangles/main/georgia.csv')
+alFile = pd.read_csv('https://raw.githubusercontent.com/FLBronson/ABVWrangles/main/alabama.csv')
 
-st.title('Data')
+st.set_page_config(page_title = 'Food Deserts', layout = 'wide')
+st.title('Food Deserts')
 
-state = st.selectbox('Select a State', usFile['State'].unique())
+tab1, tab2, tab3, tab4 = st.tabs(["United States", "Florida", "Georgia", "Alabama"])
 
-state_data = usFile[usFile['State'] == state]
+with tab1:
+    st.write(usFile)
+    st.title("United States Dataset")
+ 
+with tab2:
+    st.write(flFile)
+    st.title("Florida Dataset")
 
-st.header('Info about the state')
-st.write(state_data)
-
-fig, ax = plt.subplots(figsize=(10, 6))
-ax.bar(usFile['State'], usFile['LILATracts_1And10'], color='g', alpha=0.5)
-ax.bar(state_data['State'], state_data['LILATracts_1And10'], color='r')
-plt.xlabel('State')
-plt.ylabel('Food Desert?')
-plt.title('Food Deserts')
-plt.tight_layout()
-
-st.pyplot(fig)
+with tab3:
+    st.write(gaFile)
+    st.title("Georgia Dataset")
+    
+with tab4:
+    st.write(alFile)
+    st.title("Alabama Dataset")
