@@ -73,8 +73,6 @@ print('That is roughly', '{:.0%}'.format(lilapopGA/popGA), 'of Georgians that ar
 print('Number of low access/low income areas in Alabama affected by food deserts:', (f"{lilapopAL:,}"), '/', (f"{popAL:,}"))
 print('That is roughly', '{:.0%}'.format(lilapopAL/popAL), 'of Alabamaians that are low income / low access to supermarkets.\n')
 
-print("Hello")
-
 ''' 
 Create Graphs for area food desert data
 
