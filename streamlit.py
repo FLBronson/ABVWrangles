@@ -14,16 +14,12 @@ tab1, tab2, tab3, tab4 = st.tabs(["United States", "Florida", "Georgia", "Alabam
 
 with tab1:
     st.write(usFile)
-    st.title("United States Dataset")
  
 with tab2:
     st.write(flFile)
-    st.title("Florida Dataset")
 
 with tab3:
     st.write(gaFile)
-    st.title("Georgia Dataset")
     
 with tab4:
     st.write(alFile)
-    st.title("Alabama Dataset")
