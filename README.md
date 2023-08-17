@@ -1,5 +1,7 @@
 # ABVWrangles
 
+This is a group project for school
+
 - data.csv is the CSV file for this program
 - alabama.csv is the CSV file for all Alabama data
 - florida.csv is the CSV file for all Florida data
